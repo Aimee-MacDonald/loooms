@@ -1,5 +1,7 @@
+const http = require('http')
 const express = require('express')
 const app = express()
+const server = http.createServer(app)
 require('dotenv').config()
 const path = require('path');
 
@@ -8,5 +10,6 @@ app.set('views', __dirname)
 
 app.use(express.static(path.join(__dirname, '../../dist')))
 
+require(path.join(__dirname, 'socketManager'))(server)
 app.get('*', (req, res) => res.status(200).render('index'))
-app.listen(process.env.PORT, console.log('Server up'))
+server.listen(process.env.PORT, console.log('Server up'))
