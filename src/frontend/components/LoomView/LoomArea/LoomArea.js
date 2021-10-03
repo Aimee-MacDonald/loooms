@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import LoomInterface from '../../contractInterfaces/LoomInterface'
+import LoomInterface from '../../../contractInterfaces/LoomInterface'
 
 const LoomArea = () => {
   const loom = new LoomInterface()

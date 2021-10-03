@@ -4,13 +4,11 @@ import ReactDOM from 'react-dom'
 import 'normalize.css'
 import './main.sass'
 
-import LoomArea from './components/LoomArea/LoomArea'
-import ChatArea from './components/ChatArea/ChatArea'
+import LoomView from './components/LoomView/LoomView'
 
 const Main = () => (
   <div id='Main'>
-    <LoomArea/>
-    <ChatArea/>
+    <LoomView/>
   </div>
 )
 
