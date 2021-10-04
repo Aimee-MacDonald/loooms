@@ -8,8 +8,15 @@ const LoomFactory = () => {
 
   useEffect(() => refreshLoomCount(), [])
 
-  const createLoom = () => {
-    loomsManager.createLoom()
+  useEffect(() => {
+    loomsManager.getLoomDetails(1)
+      .then(result => console.log(result))
+      .catch(error => console.log(error))
+  }, [])
+
+  const createLoom = e => {
+    e.preventDefault()
+    loomsManager.createLoom(e.target.loomName.value)
       .then(result => refreshLoomCount())
       .catch(error => console.log(error))
   }
@@ -24,7 +31,11 @@ const LoomFactory = () => {
     <div>
       <h1>Loom Factory</h1>
       <p>{`${numLooms} active looms`}</p>
-      <button onClick={createLoom}>Create</button>
+
+      <form onSubmit={createLoom}>
+        <input id='loomName' required/>
+        <button type='submit'>Create</button>
+      </form>
     </div>
   )
 }
