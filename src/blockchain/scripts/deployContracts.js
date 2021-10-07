@@ -19,7 +19,7 @@ async function deployLoomsManager() {
 }
 
 async function main() {
-  //await deployLoom()
+  await deployLoom()
   await deployLoomsManager()
 }
 

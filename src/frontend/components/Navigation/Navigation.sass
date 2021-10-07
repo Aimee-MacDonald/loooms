@@ -1,0 +1,44 @@
+#navigationLayer
+  position: fixed
+  z-index: 20
+  width: 100%
+  height: 0
+  overflow-y: visible
+  display: flex
+  flex-flow: nowrap row
+  justify-content: space-between
+
+#Navigation
+  background-color: pink
+  height: 100vh
+  display: flex
+  flex-flow: nowrap column
+  align-items: center
+  button
+    margin-top: 0.8rem
+
+.navigationOpen
+  width: 4rem
+
+.navigationClosed
+  width: 0
+  button
+    display: none
+  #toggleNav
+    display: block
+    margin: 0.8rem 3.2rem 0 0
+
+@media screen and (min-width: 900px)
+  #Navigation
+    order: -1
+    button
+      padding: 0.6rem 0.8rem
+
+  .navigationOpen
+    width: 6rem
+
+  .navigationClosed
+    width: 0
+    #toggleNav
+      display: block
+      margin: 0.8rem 0 0 4.2rem
